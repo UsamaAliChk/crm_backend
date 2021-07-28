@@ -1,0 +1,14 @@
+version: "3"
+
+services: 
+  db:
+    build: ./mysql
+  web:
+    build: ./
+    ports:
+      - "3000:3000"
+      - "5000:5000"
+    depends_on:
+      - db
+    restart: on-failure
+  

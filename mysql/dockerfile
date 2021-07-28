@@ -1,0 +1,11 @@
+from mysql:5.7
+ENV MYSQL_DATABASE mydb
+ENV MYSQL_ROOT_PASSWORD 12345678
+ENV MYSQL_USER crmuser
+ENV MYSQL_PASSWORD 123456789
+ENV DATABASE_HOST db
+
+expose 3306
+
+COPY ./createTables.sql / docker-entrypoint-initdb.d/
+

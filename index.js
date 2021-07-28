@@ -30,19 +30,19 @@ httpsServer.listen(3000,(err)=>{
   else console.log("https server is connected")
 });
 var con = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "ec2mysql",
-  password: "12345",
-  database:"invoicdatabase",
-  port:3306
+  host: "db",
+  port:  '3306',
+  user: "crmuser",
+  password: "123456789",
+  database:"mydb"
 });
   
   try{
       con.connect(function(err) {
         if (err) throw err;
         else{
-          
-        }
+	   console.log('Database Connected')
+    }
       });
 
   }
